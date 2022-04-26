@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MargaritasAppClase.Views.EntregadorMenu.VerPerfilClientePage"
+             xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="StartAndExpand" Margin="0,20,0,100">
+                <Grid HeightRequest="150" WidthRequest="150" HorizontalOptions="Center" Margin="0,15,0,0">
+                    <Ellipse Stroke="#f06292" StrokeThickness="2" Aspect="Fill" />
+                    <controls:CircleImage x:Name="imgclienteperfil" HeightRequest="150" WidthRequest="150" HorizontalOptions="Center" />
+                </Grid>
+
+                <StackLayout Orientation="Horizontal" Margin="15,20,15,10">
+                    <Label Text="Nombre:" TextColor="#000" FontSize="16" FontAttributes="Bold" />
+                    <Label x:Name="lblnombrecliente" Text="" TextColor="#000" FontSize="16" FontAttributes="None" HorizontalOptions="EndAndExpand" />
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" Margin="15,0,15,10">
+                    <Label Text="Apellido:" TextColor="#000" FontSize="16" FontAttributes="Bold" />
+                    <Label x:Name="lblapellidocliente"  Text="" TextColor="#000" FontSize="16" FontAttributes="None" HorizontalOptions="EndAndExpand" />
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" Margin="15,0,15,10">
+                    <Label Text="Telefono: " TextColor="#000" FontSize="16" FontAttributes="Bold" />
+                    <Label x:Name="lbltelefonocliente" Text="" TextColor="#000" FontSize="16" FontAttributes="None" HorizontalOptions="EndAndExpand" />
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" Margin="15,0,15,10">
+                    <Label Text="Correo: " TextColor="#000" FontSize="16" FontAttributes="Bold" />
+                    <Label x:Name="lblcorreocliente" Text="" TextColor="#000" FontSize="16" FontAttributes="None" HorizontalOptions="EndAndExpand" />
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

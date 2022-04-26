@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MargaritasAppClase.Views.RegistroPage"
+             xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
+             NavigationPage.HasNavigationBar="True">
+    <ContentPage.Content>
+        <ScrollView>
+            <Grid>
+                <StackLayout>
+                    <Frame BackgroundColor="#fe5ca6" HeightRequest="150" HorizontalOptions="FillAndExpand" Margin="0,-5,0,0" Padding="0,20">
+                        <Grid HeightRequest="150" WidthRequest="150" HorizontalOptions="Center">
+                            <Ellipse Stroke="White" StrokeThickness="2" Aspect="Fill" />
+                            <controls:CircleImage x:Name="registroimg" HeightRequest="150" WidthRequest="150" HorizontalOptions="Center" />
+                        </Grid>
+                    </Frame>
+
+                    <Frame BackgroundColor="#fe5ca6" HeightRequest="50" Padding="0,0,0,15" Margin="0,-10,0,0">
+                        <StackLayout HorizontalOptions="CenterAndExpand" Margin="0">
+                            <Button Text="Tomar Foto" 
+                                TextColor="#fe5ca6"
+                                BackgroundColor="#FFF" 
+                                FontAttributes="Bold"
+                                CornerRadius="25"
+                                WidthRequest="170"
+                                x:Name="btntomarphoto" Clicked="btntomarphoto_Clicked"/>
+                        </StackLayout>
+                    </Frame>
+                    
+                    <StackLayout>
+                        <StackLayout HorizontalOptions="CenterAndExpand">
+                            <Label Text="REGISTRAR USUARIO" TextColor="Black" FontSize="Medium" FontAttributes="Bold" Margin=" 0, 15, 0, 0" />
+                        </StackLayout>
+
+                        <StackLayout Margin="30, 10, 30, 0">
+                            <Entry x:Name="nombreregistro_input" 
+                                   Placeholder="Nombre"
+                                   TextColor="Black"
+                                   HorizontalOptions="FillAndExpand"/>
+                        </StackLayout>
+
+                        <StackLayout Margin="30, 10, 30, 0">
+                            <Entry x:Name="apellidoregistro_input" 
+                                   Placeholder="Apellido"
+                                   TextColor="Black"
+                                   HorizontalOptions="FillAndExpand"/>
+                        </StackLayout>
+
+                        <StackLayout Margin="30, 10, 30, 0">
+                            <Entry x:Name="correoregistro_input" 
+                                   Placeholder="Correo electrónico" 
+                                   Keyboard="Email"
+                                   TextColor="Black"
+                                   HorizontalOptions="FillAndExpand"/>
+                        </StackLayout>
+
+                        <StackLayout Margin="30, 10, 30, 0">
+                            <Entry x:Name="telefonoregistro_input" 
+                                   Placeholder="Teléfono" 
+                                   Keyboard="Telephone"
+                                   TextColor="Black"
+                                   HorizontalOptions="FillAndExpand"/>
+                        </StackLayout>
+
+                        <StackLayout Margin="30, 10, 30, 0">
+                            <Entry x:Name="password_input"
+                                   Placeholder="Contraseña" 
+                                   IsPassword="True"
+                                   TextColor="Black" 
+                                   FontSize="Medium" 
+                                   HorizontalOptions="FillAndExpand"/>
+                        </StackLayout>
+
+                        <StackLayout Margin="30, 10, 30, 0">
+                            <Entry x:Name="confirmarpassword_input"
+                                   Placeholder="Confirmar Contraseña" 
+                                   IsPassword="True"
+                                   TextColor="Black" 
+                                   FontSize="Medium" 
+                                   HorizontalOptions="FillAndExpand"/>
+                        </StackLayout>
+                        
+                        <Button x:Name="btnregistrarusuario" 
+                                    Text="Registrate" 
+                                    TextColor="White"
+                                    BackgroundColor="#fe5ca6" 
+                                    FontAttributes="Bold"
+                                    CornerRadius="25"
+                                    Margin="25, 15, 25, 0" 
+                                    Clicked="btnregistrarusuario_Clicked" />
+
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Margin="0, 0, 0, 100">
+                            <Label Text="Ya tienes un usuario?" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+
+                            <Label x:Name="lbl_loginpage" 
+                                       Text="Inicia Sesion!" 
+                                       TextColor="#fe5ca6" 
+                                       HorizontalTextAlignment="Center" 
+                                       VerticalTextAlignment="Center" 
+                                       FontAttributes="Bold" />
+                        </StackLayout>
+                    </StackLayout>
+                </StackLayout>
+            </Grid>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MargaritasAppClase.Views.PortraitPage"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <Grid RowDefinitions="*, 2*, Auto">
+            <BoxView Grid.RowSpan="3">
+                <BoxView.Background>
+                    <LinearGradientBrush>
+                        <GradientStopCollection>
+                            <GradientStop Color="#FAFAFA" Offset="0"/>
+                            <GradientStop Color="#E0E0E0" Offset="1"/>
+                        </GradientStopCollection>
+                    </LinearGradientBrush>
+                </BoxView.Background>
+            </BoxView>
+            <Grid>
+                <StackLayout Padding="0" Margin="0" >
+                    <Frame BackgroundColor="#fe5ca6" HeightRequest="120" HorizontalOptions="FillAndExpand" Margin="0, -5, 0, 0"/>
+                </StackLayout>
+                <StackLayout Padding="0" Margin="0">
+                    <Frame BackgroundColor="#fe5ca6" HeightRequest="150" WidthRequest="160" HorizontalOptions="End" Margin="0, 10, -180, 0"/>
+                </StackLayout>
+                <StackLayout Padding="0" Margin="0">
+                    <Frame BackgroundColor="#fe5ca6" HeightRequest="150" WidthRequest="160" HorizontalOptions="Start" Margin="-180, 10, 0, 0"/>
+                </StackLayout>
+                <Path Data="M0,0H375V262.033s-9.025,4.813-55.426-10.71-70.141-83.047-130.3-83.22-83.544,67.7-130.893,83.22S0,262.033,0,262.033Z" 
+                      Aspect="Fill"
+                      Fill="#fe5ca6"/>
+            </Grid>
+            <StackLayout Grid.Row="1" HorizontalOptions="Center" Margin="0, -140, 0, 0" Spacing="30">
+                <Grid HeightRequest="210" WidthRequest="210" HorizontalOptions="Center">
+                    <Ellipse Stroke="White" StrokeThickness="2" Aspect="Fill" />
+                    <Image x:Name="BannerImg" Source="flowericon.png" HeightRequest="195" WidthRequest="195" HorizontalOptions="Center" />
+                </Grid>
+                <StackLayout>
+                    <Label Text="Bienvenido a" TextColor="Black" FontSize="18" FontAttributes="Bold" HorizontalOptions="Center" Margin="0, -5, 0, 0" />
+                    <Label Text="Margaritas" TextColor="Black" FontSize="35" FontAttributes="Bold" HorizontalOptions="Center" Margin="0, -10, 0, 10" />
+                    <Button x:Name="btngotologin" 
+                                    Text="Iniciar Sesión" 
+                                    TextColor="White"
+                                    BackgroundColor="#fe5ca6" 
+                                    FontAttributes="Bold"
+                                    CornerRadius="25"
+                                    Margin="0, 20, 0, 0"  
+                                    Clicked="btngotologin_Clicked"/>
+
+                    <Button x:Name="btngotoregistro" 
+                                    Text="Registrate" 
+                                    TextColor="White"
+                                    BackgroundColor="#fe5ca6" 
+                                    FontAttributes="Bold"
+                                    CornerRadius="25"
+                                    Margin="0, 5, 0, 0" 
+                                    Clicked="btngotoregistro_Clicked"/>
+                </StackLayout>                
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

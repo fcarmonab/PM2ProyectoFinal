@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
+             x:Class="MargaritasAppClase.Views.EntregadorMenu.ActualizarPerfilEntregadorPage">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <Label x:Name="id" Text="{Binding ID_Cliente}" IsVisible="False"></Label>
+                <StackLayout HorizontalOptions="CenterAndExpand" Margin="0,25,0,0">
+                    <Grid HeightRequest="150" WidthRequest="150" HorizontalOptions="Center">
+                        <Ellipse Stroke="#f06292" StrokeThickness="2" Aspect="Fill" />
+                        <controls:CircleImage x:Name="imgeditperfilrepartidor" Source="{Binding fotografia}" HeightRequest="150" WidthRequest="150" HorizontalOptions="Center" />
+                    </Grid>
+                </StackLayout>
+
+                <StackLayout HorizontalOptions="CenterAndExpand">
+                    <Button x:Name="btntomarphotoactualizadarepartidor"
+                            Text="Tomar Photo"
+                            TextColor="#fe5ca6"
+                            FontSize="15"
+                            FontAttributes="Bold"
+                            BackgroundColor="#FFF"
+                            BorderColor="#FE5CA6"
+                            BorderWidth="2"
+                            CornerRadius="10"
+                            Margin="0,15,0,0"
+                            WidthRequest="200"
+                            Clicked="btntomarphotoactualizadarepartidor_Clicked"/>
+                </StackLayout>
+
+                <StackLayout Margin="30, 10, 30, 0">
+                    <Entry x:Name="nombreactualizarrepartidor_input" 
+                           Text="{Binding nombre}"
+                           Placeholder="Nombre"
+                           TextColor="Black"
+                           HorizontalOptions="FillAndExpand"/>
+                </StackLayout>
+
+                <StackLayout Margin="30, 10, 30, 0">
+                    <Entry x:Name="apellidoactualizarrepartidor_input"
+                           Text="{Binding apellido}"
+                           Placeholder="Apellido"
+                           TextColor="Black"
+                           HorizontalOptions="FillAndExpand"/>
+                </StackLayout>
+
+                <StackLayout Margin="30, 10, 30, 15">
+                    <Entry x:Name="telefonoactualizarrepartidor_input" 
+                           Text="{Binding telefono}"
+                           Placeholder="Teléfono" 
+                           Keyboard="Telephone"
+                           TextColor="Black"
+                           HorizontalOptions="FillAndExpand"/>
+                </StackLayout>
+
+                <StackLayout HorizontalOptions="CenterAndExpand">
+                    <Button x:Name="btnguardarcambiosrepartidor"
+                            Text="Guardar Cambios"
+                            TextColor="#FFF"
+                            FontSize="15"
+                            FontAttributes="Bold"
+                            BackgroundColor="#FE5CA6" 
+                            CornerRadius="10"
+                            Margin="0,0,0,10"
+                            WidthRequest="200"
+                            Clicked="btnguardarcambiosrepartidor_Clicked"/>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

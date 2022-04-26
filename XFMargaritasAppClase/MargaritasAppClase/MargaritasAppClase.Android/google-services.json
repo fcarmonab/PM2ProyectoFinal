@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "867943752359",
+    "project_id": "margaritasappclase",
+    "storage_bucket": "margaritasappclase.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:867943752359:android:9dd5e185f98fe54db17182",
+        "android_client_info": {
+          "package_name": "com.companyname.margaritasappclase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "867943752359-shhamjk2bc9e5gcr9v9avgph75llo1c7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB1Yi_Gh2243qCQ8JJU5L1_9AWf0lK4l4w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "867943752359-shhamjk2bc9e5gcr9v9avgph75llo1c7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

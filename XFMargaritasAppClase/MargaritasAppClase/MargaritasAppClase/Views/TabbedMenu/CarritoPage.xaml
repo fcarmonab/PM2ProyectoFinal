@@ -1,0 +1,160 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MargaritasAppClase.Views.TabbedMenu.CarritoPage">
+    <ContentPage.Content>
+        <StackLayout Padding="0" Margin="0, 0, 0, 0" VerticalOptions="FillAndExpand">
+            <Frame BackgroundColor="#fe5ca6">
+                <StackLayout>
+                    <Image Source="flowericon_sinfondo.png" HeightRequest="50" HorizontalOptions="CenterAndExpand" Margin="0,-5,0,-5"/>
+                </StackLayout>
+            </Frame>
+
+            <AbsoluteLayout IsVisible="false" Padding="12"
+                                AbsoluteLayout.LayoutFlags="PositionProportional"
+                                AbsoluteLayout.LayoutBounds="0.5,0.5,-1,-1" x:Name="sl" HorizontalOptions="Center">
+
+                <ActivityIndicator IsRunning="false" x:Name="spinner" VerticalOptions="Center"
+                                       HorizontalOptions="Center" HeightRequest="80" WidthRequest="80"/>
+            </AbsoluteLayout>
+            <ListView x:Name="listview_carritoproductos" 
+                          SeparatorVisibility="Default"
+                          SeparatorColor="LightGray"
+                          HasUnevenRows="True"
+                          HorizontalOptions="StartAndExpand" 
+                          VerticalOptions="FillAndExpand" 
+                          Margin="0,0,0,0">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout MinimumHeightRequest="120"
+                                             Padding="15,10,0,10" 
+                                             Orientation="Horizontal" 
+                                             VerticalOptions="FillAndExpand">
+                                <Image Source="{Binding fotografia}" WidthRequest="100" HeightRequest="70"/>
+                                <StackLayout Orientation="Vertical" Padding="0,0,0,0" VerticalOptions="Center">
+                                    <Label Text="{Binding ID_Carrito}" IsVisible="False" FontSize="20" Margin="2" TextColor="Black" FontAttributes="Bold"/>
+                                    <Label Text="{Binding desc_prod}" Padding="10,0,0,0" FontSize="20" Margin="2" TextColor="Black" FontAttributes="Bold"/>
+                                    <StackLayout Orientation="Horizontal" Padding="10,0,0,0">
+                                        <Label Text="Precio:" FontSize="14" Margin="0,2" TextColor="Black" />
+                                        <Label Text="{Binding Precio}" FontSize="14" Margin="0,2" TextColor="Black" />
+                                    </StackLayout>
+
+                                    <StackLayout Orientation="Horizontal" WidthRequest="200" Margin="0,0,0,0">
+                                        <Button x:Name="btnquitarproductocarrito"
+                                                    Text="&#xf1f8;" 
+                                                    FontSize="25"
+                                                    FontFamily="{StaticResource FontAwesomeSolid}"
+                                                    TextColor="#ff1744"
+                                                    FontAttributes="Bold"
+                                                    BackgroundColor="Transparent"
+                                                    WidthRequest="50"
+                                                    CornerRadius="50" 
+                                                    Clicked="btnquitarproductocarrito_Clicked" />
+
+                                        <Label Text="|" TextColor="#000" FontSize="25" Margin="-5,-5,-5,0" VerticalTextAlignment="Center" />
+
+                                        <Button x:Name="btnrestarproductocarrito" 
+                                                    Text="&#xf056;" 
+                                                    FontSize="25"
+                                                    FontFamily="{StaticResource FontAwesomeSolid}"
+                                                    TextColor="#ff1744"
+                                                    FontAttributes="Bold"
+                                                    BackgroundColor="Transparent"
+                                                    WidthRequest="50"
+                                                    CornerRadius="50"    
+                                                    Clicked="btnrestarproductocarrito_Clicked" />
+
+                                        <Label x:Name="lblcantidadproductocarrito" 
+                                                   Text="{Binding Cantidad}"
+                                                   TextColor="#000"
+                                                   FontSize="20"
+                                                   VerticalTextAlignment="Center" />
+
+                                        <Button x:Name="btnagregarproductocarrito" 
+                                                    Text="&#xf055;" 
+                                                    FontSize="25"
+                                                    FontFamily="{StaticResource FontAwesomeSolid}"
+                                                    TextColor="#00c853"
+                                                    FontAttributes="Bold"
+                                                    BackgroundColor="Transparent"
+                                                    WidthRequest="50"
+                                                    CornerRadius="50"    
+                                                    Clicked="btnagregarproductocarrito_Clicked" />
+                                    </StackLayout>
+
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <StackLayout Padding="0" VerticalOptions="End" Margin="0,30,0,0">
+                <StackLayout Orientation="Horizontal" Padding="0" HorizontalOptions="CenterAndExpand">
+
+                    <DatePicker x:Name="datefechadeentrega"
+                                WidthRequest="150"
+                                Margin="0,-30,0,0" 
+                                DateSelected="datefechadeentrega_DateSelected"
+                                />
+
+                    <TimePicker x:Name="timehoraentrega"
+                                WidthRequest="150"
+                                Margin="0,-30,0,0" 
+                                
+                                />
+
+                </StackLayout>
+
+                <StackLayout Orientation="Vertical" Padding="0" HorizontalOptions="Fill">
+                    <Button x:Name="btnaudioreferencia"
+                            Text="Audio"
+                            TextColor="#FFF"
+                            BackgroundColor="#000"
+                            Margin="30,0,30,0"
+                            Clicked="btnaudioreferencia_Clicked" />
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Margin="0,-5,0,-10">
+                    <Picker x:Name="selectubicacion"
+                                Title="Seleccione una Ubicacion"
+                                WidthRequest="250"
+                                Margin="8,0,0,0"                                
+                                SelectedIndexChanged="selectubicacion_SelectedIndexChanged">
+                    </Picker>
+
+                    <Button x:Name="btnagregarubicacioncarrito" 
+                                Text="&#xf055;"
+                                BackgroundColor="Transparent"
+                                FontSize="35"
+                                FontFamily="{StaticResource FontAwesomeSolid}"
+                                WidthRequest="60"
+                                Margin="-13,0,0,0" 
+                                Clicked="btnagregarubicacioncarrito_Clicked"/>
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal" Margin="50,10,50,5">
+                    <Label Text="Sub Total:" TextColor="#000" FontSize="16" FontAttributes="Bold" />
+                    <Label x:Name="lblsubtotal" Text="L. 00.00" TextColor="#000" FontSize="16" FontAttributes="None" HorizontalOptions="EndAndExpand" />
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" Margin="50,0,50,5">
+                    <Label Text="ISV:" TextColor="#000" FontSize="16" FontAttributes="Bold" />
+                    <Label x:Name="lblisv" Text="L. 00.00" TextColor="#000" FontSize="16" FontAttributes="None" HorizontalOptions="EndAndExpand" />
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" Margin="50,0,50,5">
+                    <Label Text="Total a Pagar:" TextColor="#000" FontSize="16" FontAttributes="Bold" />
+                    <Label x:Name="lbltotalapagar" Text="L. 00.00" TextColor="#000" FontSize="16" FontAttributes="None" HorizontalOptions="EndAndExpand" />
+                </StackLayout>
+                <StackLayout BackgroundColor="#FFF">
+                    <Button x:Name="btnprocesarorden"
+                                Text="Procesar Orden"
+                                TextColor="#FFF"
+                                BackgroundColor="#ed4398"
+                                Margin="10,0,10,5" 
+                                Clicked="btnprocesarorden_Clicked"/>
+                </StackLayout>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

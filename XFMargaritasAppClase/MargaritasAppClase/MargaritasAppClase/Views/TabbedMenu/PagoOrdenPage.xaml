@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MargaritasAppClase.Views.TabbedMenu.PagoOrdenPage">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <ControlTemplate x:Key="CustomRadioTemplate">
+                <Grid>
+                    <Ellipse x:Name="CheckedCircle"
+                             Fill="#E0E0E0" Stroke="#000" StrokeThickness="2"
+                             HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" />
+                    <Ellipse x:Name="UncheckedCircle"
+                             Fill="#FFF" Stroke="#000" StrokeThickness="2"
+                             HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" />
+
+                    <ContentPresenter />
+
+                    <VisualStateManager.VisualStateGroups>
+                        <VisualStateGroupList>
+                            <VisualStateGroup x:Name="CheckeState">
+                                <VisualState x:Name="Checked">
+                                    <VisualState.Setters>
+                                        <Setter TargetName="CheckedCircle" Property="IsVisible" Value="True" />
+                                        <Setter TargetName="UncheckedCircle" Property="IsVisible" Value="False" />
+                                    </VisualState.Setters>
+                                </VisualState>
+
+                                <VisualState x:Name="Unchecked">
+                                    <VisualState.Setters>
+                                        <Setter TargetName="CheckedCircle" Property="IsVisible" Value="False" />
+                                        <Setter TargetName="UncheckedCircle" Property="IsVisible" Value="True" />
+                                    </VisualState.Setters>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateGroupList>
+                    </VisualStateManager.VisualStateGroups>
+                </Grid>
+            </ControlTemplate>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <ScrollView>
+            <Grid ColumnDefinitions="150, 150"
+                  RowDefinitions="150"
+                  Margin="10,35,10,0"
+                  HorizontalOptions="Center">
+
+                <RadioButton x:Name="radioefectivo" Grid.Column="0" 
+                             GroupName="Group1" 
+                             ControlTemplate="{StaticResource CustomRadioTemplate}">
+                    <RadioButton.Content>
+                        <StackLayout Orientation="Vertical" Spacing="0" VerticalOptions="Center">
+                            <Image Source="dinero_icono.png" HeightRequest="60" WidthRequest="60"/>
+                            <Label Text="Efectivo" TextColor="#000" FontAttributes="Bold" HorizontalTextAlignment="Center" />
+                        </StackLayout>
+                    </RadioButton.Content>
+                </RadioButton>
+
+                <RadioButton x:Name="radiotarjeta" Grid.Column="1" 
+                             GroupName="Group1" 
+                             ControlTemplate="{StaticResource CustomRadioTemplate}">
+                    <RadioButton.Content>
+                        <StackLayout Orientation="Vertical" Spacing="0" VerticalOptions="Center">
+                            <Image Source="tarjeta_icono.png" HeightRequest="60" WidthRequest="60"/>
+                            <Label Text="Tarjeta" TextColor="#000" FontAttributes="Bold" HorizontalTextAlignment="Center" />
+                        </StackLayout>
+                    </RadioButton.Content>
+                </RadioButton>
+
+                <StackLayout x:Name="layoutefectivo" Margin="0,20,-160,0" HorizontalOptions="CenterAndExpand" Grid.Row="1" WidthRequest="300" IsVisible="False">
+                    <StackLayout Orientation="Horizontal" Margin="3,0,0,-10">
+                        <Label Text="Cantidad a Pagar:" TextColor="#000" FontSize="16" FontAttributes="Bold" />
+                    </StackLayout>
+                    
+                    <Entry x:Name="cantidadefectivo_input" 
+                           Placeholder="Cantidad"
+                           Keyboard="Numeric" />
+
+                    <StackLayout Orientation="Horizontal" Margin="3,5,0,-10">
+                        <Label Text="Observaciones:" TextColor="#000" FontSize="16" FontAttributes="Bold" />
+                    </StackLayout>
+                    
+                    <Entry x:Name="comentariopedidoefectivo_input" HeightRequest="100" />
+
+                    <Button x:Name="btnrealizarpagoefectivo"
+                            Text="Realizar Pedido"
+                            TextColor="#FFF"
+                            BackgroundColor="#ed4398"
+                            Margin="0"
+                            Clicked="btnrealizarpagoefectivo_Clicked" />
+                </StackLayout>
+
+                <StackLayout x:Name="layouttarjeta" Margin="0,20,-160,0" HorizontalOptions="CenterAndExpand" Grid.Row="1" WidthRequest="300" IsVisible="False">
+                    <StackLayout Orientation="Horizontal" Margin="3,0,0,-10">
+                        <Label Text="Seleccione una Tarjeta:" TextColor="#000" FontSize="16" FontAttributes="Bold" />
+                    </StackLayout>
+                    
+                    <StackLayout Orientation="Horizontal">
+                        <Picker x:Name="selecttarjeta"
+                                Title="Seleccione una Tarjeta"
+                                WidthRequest="250"
+                                Margin="0"
+                                SelectedIndexChanged="selecttarjeta_SelectedIndexChanged"
+                                >
+                        </Picker>
+
+                        <Button x:Name="btnagregartarjetaorden" 
+                                Text="&#xf055;"
+                                BackgroundColor="Transparent"
+                                FontSize="35"
+                                FontFamily="{StaticResource FontAwesomeSolid}"
+                                WidthRequest="60"
+                                Margin="-13,0,0,0" 
+                                Clicked="btnagregartarjetaorden_Clicked"/>
+                    </StackLayout>
+
+                    <StackLayout Orientation="Horizontal" Margin="3,0,0,-10">
+                        <Label Text="Observaciones:" TextColor="#000" FontSize="16" FontAttributes="Bold" />
+                    </StackLayout>
+
+                    <Entry x:Name="comentariopedidotarjeta_input" HeightRequest="100" />
+
+                    <StackLayout Orientation="Horizontal" Margin="5,10,5,15">
+                        <Label Text="Cantidad a Debitar:" TextColor="#000" FontSize="16" FontAttributes="Bold" />
+                        <Label x:Name="lblcantdebitar" Text="L. 00.00" TextColor="#000" FontSize="16" FontAttributes="None" HorizontalOptions="EndAndExpand" />
+                    </StackLayout>
+
+                    <Button x:Name="btnrealizarpagotarjeta"
+                            Text="Realizar Pedido"
+                            TextColor="#FFF"
+                            BackgroundColor="#ed4398"
+                            Margin="0"
+                            Clicked="btnrealizarpagotarjeta_Clicked" />
+                </StackLayout>
+            </Grid>
+        </ScrollView>
+    </ContentPage.Content>
+    
+</ContentPage>

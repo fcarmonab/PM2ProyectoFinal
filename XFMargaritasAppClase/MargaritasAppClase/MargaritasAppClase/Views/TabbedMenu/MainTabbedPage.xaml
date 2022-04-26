@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:locals="clr-namespace:MargaritasAppClase.Views.TabbedMenu"
+            x:Class="MargaritasAppClase.Views.TabbedMenu.MainTabbedPage"
+            NavigationPage.HasNavigationBar="False"
+            BarBackground="#FE5CA6" BarTextColor="#FFFFFF" SelectedTabColor="#FFFFFF" UnselectedTabColor="#FFFFFF">
+    
+    <locals:MenuPage Title="Home" IconImageSource="home_icono"/>
+    <locals:BusquedaPage Title="Pedidos" IconImageSource="carritohistorial_icono"/>
+    <locals:CarritoPage Title="Carrito" IconImageSource="carrito_icono"/>
+    <locals:PerfilPage Title="Perfil" IconImageSource="perfil_icono"/>
+
+</TabbedPage>

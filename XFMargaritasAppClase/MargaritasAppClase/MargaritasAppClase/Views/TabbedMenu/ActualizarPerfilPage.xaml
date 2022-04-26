@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
+             x:Class="MargaritasAppClase.Views.TabbedMenu.ActualizarPerfilPage">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <!--<Frame BackgroundColor="#fe5ca6">
+                    <StackLayout>
+                        <Label Text="Actualizar Perfil" TextColor="#FFF" FontSize="20" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" />
+                    </StackLayout>
+                </Frame>-->
+                <Label x:Name="id" Text="{Binding ID_Cliente}" IsVisible="False"></Label>
+                <StackLayout HorizontalOptions="CenterAndExpand" Margin="0,25,0,0">
+                    <Grid HeightRequest="150" WidthRequest="150" HorizontalOptions="Center">
+                        <Ellipse Stroke="#f06292" StrokeThickness="2" Aspect="Fill" />
+                        <controls:CircleImage x:Name="imgeditperfil" Source="{Binding fotografia}" HeightRequest="150" WidthRequest="150" HorizontalOptions="Center" />
+                    </Grid>
+                </StackLayout>
+
+                <StackLayout HorizontalOptions="CenterAndExpand">
+                    <Button x:Name="btntomarphotoactualizada"
+                            Text="Tomar Photo"
+                            TextColor="#fe5ca6"
+                            FontSize="15"
+                            FontAttributes="Bold"
+                            BackgroundColor="#FFF"
+                            BorderColor="#FE5CA6"
+                            BorderWidth="2"
+                            CornerRadius="10"
+                            Margin="0,15,0,0"
+                            WidthRequest="200"
+                            Clicked="btntomarphotoactualizada_Clicked"/>
+                </StackLayout>
+
+                <StackLayout Margin="30, 10, 30, 0">
+                    <Entry x:Name="nombreactualizar_input" 
+                           Text="{Binding Nombre}"
+                           Placeholder="Nombre"
+                           TextColor="Black"
+                           HorizontalOptions="FillAndExpand"/>
+                </StackLayout>
+
+                <StackLayout Margin="30, 10, 30, 0">
+                    <Entry x:Name="apellidoactualizar_input"
+                           Text="{Binding Apellido}"
+                           Placeholder="Apellido"
+                           TextColor="Black"
+                           HorizontalOptions="FillAndExpand"/>
+                </StackLayout>
+
+                <StackLayout Margin="30, 10, 30, 15">
+                    <Entry x:Name="telefonoactualizar_input" 
+                           Text="{Binding Telefono}"
+                           Placeholder="Teléfono" 
+                           Keyboard="Telephone"
+                           TextColor="Black"
+                           HorizontalOptions="FillAndExpand"/>
+                </StackLayout>
+
+                <StackLayout HorizontalOptions="CenterAndExpand">
+                    <Button x:Name="btnguardarcambios"
+                            Text="Guardar Cambios"
+                            TextColor="#FFF"
+                            FontSize="15"
+                            FontAttributes="Bold"
+                            BackgroundColor="#FE5CA6" 
+                            CornerRadius="10"
+                            Margin="0,0,0,10"
+                            WidthRequest="200"
+                            Clicked="btnguardarcambios_Clicked"/>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MargaritasAppClase.Views.EntregadorMenu.EntregadorDetallePedidoPage">
+    <ContentPage.Content>
+        <StackLayout Padding="0" Margin="0, 0, 0, 0" VerticalOptions="FillAndExpand">
+            <AbsoluteLayout IsVisible="false" Padding="12"
+                                AbsoluteLayout.LayoutFlags="PositionProportional"
+                                AbsoluteLayout.LayoutBounds="0.5,0.5,-1,-1" x:Name="sl_detallepedidoentregador" HorizontalOptions="Center">
+
+                <ActivityIndicator IsRunning="false" x:Name="spinner_detallepedidoentregador" VerticalOptions="Center"
+                                       HorizontalOptions="Center" HeightRequest="80" WidthRequest="80" />
+            </AbsoluteLayout>
+            <ListView x:Name="listview_detallepedidoentregador"
+                          SeparatorVisibility="Default"
+                          SeparatorColor="LightGray"
+                          HasUnevenRows="True"
+                          HorizontalOptions="StartAndExpand" 
+                          VerticalOptions="FillAndExpand" 
+                          Margin="0,0,0,0">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout MinimumHeightRequest="120"
+                                                 Padding="15,10" 
+                                                 Orientation="Horizontal" 
+                                                 VerticalOptions="FillAndExpand">
+                                <Image Source="{Binding fotografia}" WidthRequest="100" HeightRequest="70" />
+                                <StackLayout Orientation="Vertical" Padding="10,5" VerticalOptions="Center">
+                                    <Label Text="{Binding Id}" IsVisible="False" FontSize="20" Margin="2" TextColor="Black" FontAttributes="Bold" />
+                                    <Label Text="{Binding Descripcion}" FontSize="20" Margin="2" TextColor="Black" FontAttributes="Bold" />
+
+                                    <StackLayout Orientation="Horizontal">
+                                        <Label Text="Precio:" FontSize="14" Margin="0,2" TextColor="Black" />
+                                        <Label Text="{Binding Precio}" FontSize="14" Margin="0,2" TextColor="Black" />
+                                    </StackLayout>
+
+                                    <StackLayout Orientation="Horizontal" Margin="0,0,0,9">
+                                        <Label Text="Cantidad:" FontSize="14" Margin="0,2" TextColor="Black" />
+                                        <Label Text="{Binding Cantidad}" FontSize="14" Margin="0,2" TextColor="Black" />
+                                    </StackLayout>
+
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <StackLayout Padding="0" VerticalOptions="End" Margin="0,15,0,0">
+                <StackLayout Orientation="Horizontal" Padding="0" HorizontalOptions="CenterAndExpand">
+
+                    <StackLayout Orientation="Vertical">
+                        <Label Text="Fecha de Entrega:" TextColor="#000" FontSize="16" FontAttributes="Bold" Margin="5,0,0,20" />
+                        <DatePicker x:Name="dateverfechadeentregaentregador"
+                                    WidthRequest="150"
+                                    Margin="0,-30,0,0" 
+                                    IsEnabled="False" />
+                    </StackLayout>
+
+                    <StackLayout Orientation="Vertical">
+                        <Label Text="Hora de Entrega:" TextColor="#000" FontSize="16" FontAttributes="Bold" Margin="5,0,0,20" />
+                        <TimePicker x:Name="timeverhoraentregaentregador"
+                                    WidthRequest="150"
+                                    Margin="0,-30,0,0" 
+                                    IsEnabled="False" />
+                    </StackLayout>
+
+
+                </StackLayout>
+
+                <StackLayout Orientation="Vertical" Padding="0" HorizontalOptions="Fill">
+                    <Button x:Name="btnescucharaudioreferenciaentregador"
+                            Text="Escuchar Audio"
+                            TextColor="#FFF"
+                            BackgroundColor="#000"
+                            Margin="30,0,30,0"
+                            IsVisible="False"
+                            Clicked="btnescucharaudioreferenciaentregador_Clicked" />
+                </StackLayout>
+
+                <StackLayout Orientation="Vertical" HorizontalOptions="StartAndExpand" Margin="40,0,40,0">
+                    <!--<Picker x:Name="selectubicacion"
+                            Title="Seleccione una Ubicacion"
+                            WidthRequest="300"
+                            Margin="8,0,0,0"
+                            IsEnabled="False">
+                    </Picker>-->
+
+                    <Label Text="Ubicacion:" TextColor="#000" FontSize="16" FontAttributes="Bold" Margin="0,0,0,0" />
+                    <Label x:Name="lblUbicacionentregador" Text="" TextColor="#000" FontSize="16" FontAttributes="None" Margin="0,0,0,20" HorizontalOptions="StartAndExpand" />
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal" Margin="40,10,40,5">
+                    <Label Text="Sub Total:" TextColor="#000" FontSize="16" FontAttributes="Bold" />
+                    <Label x:Name="lblsubtotaldetalleordenentregador" Text="L. 00.00" TextColor="#000" FontSize="16" FontAttributes="None" HorizontalOptions="EndAndExpand" />
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" Margin="40,0,40,5">
+                    <Label Text="ISV:" TextColor="#000" FontSize="16" FontAttributes="Bold" />
+                    <Label x:Name="lblisvdetalleordenentregador" Text="L. 00.00" TextColor="#000" FontSize="16" FontAttributes="None" HorizontalOptions="EndAndExpand" />
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" Margin="40,0,40,25">
+                    <Label Text="Total a Pagar:" TextColor="#000" FontSize="16" FontAttributes="Bold" />
+                    <Label x:Name="lbltotalapagardetalleordenentregador" Text="L. 00.00" TextColor="#000" FontSize="16" FontAttributes="None" HorizontalOptions="EndAndExpand" />
+                </StackLayout>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

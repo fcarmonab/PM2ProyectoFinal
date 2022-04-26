@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
+             x:Class="MargaritasAppClase.Views.EntregadorMenu.MapaEntregadorPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <maps:Map x:Name="MapaEntregador" IsShowingUser="True"/>
+            <Button x:Name="btnMejorRuta" Text ="Buscar Mejor Ruta" BackgroundColor="Green" TextColor="White" Clicked="btnMejorRuta_Clicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

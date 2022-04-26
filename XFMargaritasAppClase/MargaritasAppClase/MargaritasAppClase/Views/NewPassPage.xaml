@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MargaritasAppClase.Views.NewPassPage">
+    <ContentPage.Content>
+        <ScrollView>
+            <Grid>
+                <StackLayout Padding="0" Margin="0, -5, 0, 0">
+                    <Frame BackgroundColor="#fe5ca6" HeightRequest="150" HorizontalOptions="FillAndExpand"/>
+                </StackLayout>
+
+                <StackLayout Margin="20, -50, 20, 0">
+                    <Frame BackgroundColor="White" HasShadow="True" HeightRequest="250" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand">
+                        <StackLayout>
+                            <StackLayout HorizontalOptions="CenterAndExpand">
+                                <Label Text="ACTUALIZAR CONTRASEÑA" TextColor="Black" FontSize="Medium" FontAttributes="Bold" Margin=" 0, 10, 0, 0" />
+                            </StackLayout>
+
+                            <StackLayout Margin="10, 25, 10, 0">
+                                <Entry x:Name="nuevopass_input" 
+                                       Placeholder="Nueva Contraseña"
+                                       IsPassword="True"
+                                       TextColor="Black"
+                                       HorizontalOptions="FillAndExpand"/>
+                            </StackLayout>
+
+                            <StackLayout Margin="10, 5, 10, 0">
+                                <Entry x:Name="confirmarnuevopass_input" 
+                                       Placeholder="Confirmar Nueva Contraseña"
+                                       IsPassword="True"
+                                       TextColor="Black"
+                                       HorizontalOptions="FillAndExpand"/>
+                            </StackLayout>
+
+                            <Button x:Name="btnactualizarpassword" 
+                                    Text="Confirmar Clave Temporal" 
+                                    TextColor="White"
+                                    BackgroundColor="#fe5ca6" 
+                                    FontAttributes="Bold"
+                                    CornerRadius="25"
+                                    Margin="0, 10, 0, 0" 
+                                    Clicked="btnactualizarpassword_Clicked"/>
+                        </StackLayout>
+                    </Frame>
+                </StackLayout>
+            </Grid>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
